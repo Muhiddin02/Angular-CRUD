@@ -163,7 +163,7 @@ delete(post:Post){
     }).afterClosed().subscribe(result => {
       if (result) {       
        this.postService.delete(post.id).subscribe(res => {
-        this.dataSource.data = updateCollection(this.dataSource.data, res,true);
+        this.dataSource.data = updateCollection(this.dataSource.data, post,true);
        })               
       }
     });

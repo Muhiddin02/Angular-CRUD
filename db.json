@@ -1,15 +1,6 @@
 {
   "posts": [
     {
-      "id": 1,
-      "firstName": "Karoly1111111111",
-      "lastName": "Perse",
-      "avatar": "https://robohash.org/accusamusveniamdolores.png?size=150x150&set=set1",
-      "language": "Punjabi",
-      "company": "Livefish",
-      "university": "Stockholm University"
-    },
-    {
       "id": 2,
       "firstName": "Regine",
       "lastName": "Casson",
