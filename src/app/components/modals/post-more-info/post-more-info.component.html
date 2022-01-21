@@ -1,0 +1,33 @@
+<div class="mb-3" mat-dialog-content>
+  <div class="text-center mb-2">
+    <img
+      [src]="data.avatar"
+      alt="Avatar"
+      width="150"
+      height="150"
+      class="rounded-circle"
+    />
+  </div>
+  <ul class="list-group mb-2">
+    <li class="list-group-item"><span class="list-label">First Name:</span>{{ data.firstName }}</li>
+    <li class="list-group-item"><span class="list-label">Last Name:</span>{{ data.lastName }}</li>
+    <li class="list-group-item"><span class="list-label">Language:</span>{{ data.language }}</li>
+    <li class="list-group-item"><span class="list-label">Company:</span>{{ data.company }}</li>
+    <li class="list-group-item"><span class="list-label">University:</span>{{ data.university }}</li>
+  </ul>
+  <h1>About</h1>
+  <p>
+    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+    Lorem Ipsum has been the industry's standard dummy text ever since the
+    1500s, when an unknown printer took a galley of type and scrambled it to
+    make a type specimen book. It has survived not only five centuries, but also
+    the leap into electronic typesetting, remaining essentially unchanged. It
+    was popularised in the 1960s with the release of Letraset sheets containing
+    Lorem Ipsum passages, and more recently with desktop publishing software
+    like Aldus PageMaker including versions of Lorem Ipsum
+  </p>
+</div>
+
+<mat-dialog-actions align="end">
+  <button mat-raised-button mat-dialog-close>Ok</button>
+</mat-dialog-actions>

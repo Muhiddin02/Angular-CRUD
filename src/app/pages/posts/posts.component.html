@@ -1,0 +1,72 @@
+<div class="container py-2">
+    <div class="d-flex justify-content-between mb-2">
+        <h1 class="mb-0">List of Posts</h1>
+        <button mat-raised-button title="Add new Post" (click) = "add()">
+            <i class="material-icons">add</i>
+        </button>
+    </div>
+    <app-posts-filter></app-posts-filter>
+
+    <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource" 
+         matSort matSortStart="desc" 
+         matSortDirection="asc" 
+         matSortDisableClearw
+         (matSortChange)="setSortingQueryParams($event)"
+         class="stripped">
+            <ng-container matColumnDef="id">
+                <th width="50" mat-header-cell *matHeaderCellDef mat-sort-header>№</th>
+                <td width="50" mat-cell *matCellDef="let row">{{ row.id }}</td>
+            </ng-container>
+    
+            <ng-container matColumnDef="avatar">
+                <th width = "70" mat-header-cell *matHeaderCellDef >Photo</th>
+                <td width = "70" mat-cell *matCellDef="let row">
+                    <img [src]="row.avatar" width="30" height="30" alt="photo" class="rounded-circle">
+                </td>
+            </ng-container>
+    
+            <ng-container matColumnDef="firstName">
+                <th class="left" mat-header-cell *matHeaderCellDef mat-sort-header> First Name</th>
+                <td class="left" mat-cell *matCellDef="let row">{{ row.firstName }}</td>
+            </ng-container>
+    
+            <ng-container matColumnDef="lastName">
+                <th class="left" mat-header-cell *matHeaderCellDef mat-sort-header> Last Name</th>
+                <td class="left" mat-cell *matCellDef="let row">{{ row.lastName }}</td>
+            </ng-container>
+    
+            <ng-container matColumnDef="actionsColumn">
+                <th width="140" mat-header-cell *matHeaderCellDef>Actions</th>
+                <td width="140" class="mat-column-expandedDetail text-nowrap" mat-cell *matCellDef="let row">
+                    <button class="bg-transparent text-primary border-0" 
+                     title="More Info" (click) = "moreInfo(row)">
+                        <i class="material-icons">visibility</i>
+                    </button>
+                    <button class="bg-transparent text-secondary border-0" 
+                     title="Edit Post" (click) = "edit(row)">
+                        <i class="material-icons">edit</i>
+                    </button>
+                    <button class="bg-transparent text-danger border-0" 
+                     title="Delete" (click) = "delete(row)">
+                        <i class="material-icons">delete</i>
+                    </button>
+                </td>
+            </ng-container>
+    
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        </table>
+    
+        <mat-paginator
+        [pageSizeOptions]="pageSizeOptions"
+        class="rounded mat-paginator-sticky"
+        [length]="totalCount"
+        (page)="setPaginationQueryParams($event)"
+        [pageIndex]="_page"
+        [pageSize]="_limit"
+      >
+      </mat-paginator>
+    </div>
+</div>
+

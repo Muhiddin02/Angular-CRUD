@@ -1,0 +1,10 @@
+<div class="p-3">
+    <mat-dialog-content class="mb-3">
+      <h4 class="text-center">Удалить «{{name}}» из таблица?</h4>
+    </mat-dialog-content>
+  
+    <mat-dialog-actions align="end">    
+      <button  mat-raised-button  mat-dialog-close>Cancel</button>
+      <button  mat-raised-button color="warn"  [mat-dialog-close]="true" cdkFocusInitial>Yes</button>
+    </mat-dialog-actions>
+</div>

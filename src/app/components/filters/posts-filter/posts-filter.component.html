@@ -1,0 +1,31 @@
+<form [formGroup]="form" class="row gx-2">
+  <mat-form-field appearance="outline" class="col-md-5">
+    <mat-label>First Name</mat-label>
+    <input
+      matInput
+      placeholder="Elon"
+      type="text"
+      formControlName="firstName"
+    />
+  </mat-form-field>
+  <mat-form-field appearance="outline" class="col-md-5">
+    <mat-label>Company</mat-label>
+    <input
+      matInput
+      placeholder="Google"
+      type="text"
+      formControlName="company"
+    />
+  </mat-form-field>
+  <div class="col-md-2">
+    <button
+      mat-flat-button
+      type="submit"
+      color="primary"
+      (click)="submitFilter()"
+      class="w-100 mt-1 py-2 btn-search mb-2"
+    >
+      <i class="material-icons">search</i>
+    </button>
+  </div>
+</form>

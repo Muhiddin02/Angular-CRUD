@@ -1,0 +1,17 @@
+@import '../../../scss/vars';
+
+li{
+  a {
+    color: $secondary;
+    font-size: 18px;
+    border-bottom: 2px solid transparent;
+    &:hover,&.active{
+        color: $primary-color;
+        border-color: $primary-color;
+    }
+  }
+}
+
+.logo {
+  max-height: 36px;
+}

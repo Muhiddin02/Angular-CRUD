@@ -1,0 +1,9 @@
+@import '../../../../scss/vars';
+
+.list-label{
+    display: inline-block;
+    width: 90px;
+    text-align: right;
+    color: $secondary;
+    padding-right: 4px;
+}

@@ -1,0 +1,91 @@
+@import '~@angular/material/theming';
+@import 'scss/vars';
+
+@include mat-core;
+
+$primary: mat-palette($mat-green);
+$accent: mat-palette($mat-blue-grey, 600);
+$warn: mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$theme: mat-light-theme($primary, $accent, $warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($theme);
+
+// MatTable
+table {
+  width: 100%;
+  &,
+  thead,
+  thead,
+  tr {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  tr {
+    th.mat-header-cell,
+    td.mat-cell {
+      text-align: center;
+      & {
+        .mat-sort-header-container {
+          justify-content: center;
+        }
+      }
+      &.left {
+        text-align: left;
+        .mat-sort-header-container {
+          justify-content: flex-start;
+        }
+      }    
+    }
+    &.mat-header-row, &.mat-row {
+      height: 35px !important;
+    }
+  }
+  .mat-cell .mat-header-cell {
+    padding: 4px !important;
+    border-color: rgba(0, 0, 0, 0.04);
+    &:first-of-type {
+      padding-left: 10px !important;
+    }
+    &:last-of-type {
+      padding-right: 10px !important;
+    }
+    &.mat-column-expandedDetail {
+      padding: 0 !important;
+    }
+  }
+  .mat-header-cell {
+    &:first-of-type {
+      border-top-left-radius: 8px;
+    }
+    &:last-of-type {
+      border-top-right-radius: 8px;
+    }
+  }
+  &.stripped {
+    .mat-header-row {
+      background-color: $primary-color;
+      .mat-header-cell,
+      .mat-sort-header-arrow {
+        color: white;
+      }
+    }
+    tr:nth-child(even) {
+      background-color: $light;
+    }
+    td.mat-cell,
+    td.mat-footer-cell,
+    th.mat-header-cell {
+      border: 0;
+    }
+    td.mat-cell {
+      &:not(:last-child) {
+        border-right: 1px solid $light;
+      }
+    }
+  }
+}
